@@ -4,11 +4,6 @@ var bowImage, arrowImage, green_balloonImage, red_balloonImage, pink_balloonImag
 var score=0;
 
 var redB, greenB, pinkB, blueB, arrowGroup;
-arrowGroup = newGroup();
-redB = newGroup();
-greenB = newGroup();
-pinkB = newGroup();
-blueB = newGroup();
 
 function preload(){
   
@@ -37,6 +32,11 @@ function setup() {
   
    score = 0    
 
+  arrowGroup = newGroup();
+  redB = newGroup();
+  greenB = newGroup();
+  pinkB = newGroup();
+  blueB = newGroup();
 }
 
 function draw() {
