@@ -71,6 +71,27 @@ function draw() {
       pinkBalloon();
     }
   }
+
+  if(arrowGroup.isTouching(redB)) {
+    redB.destroyEach();
+    arrowGroup.destroyEach();
+    score = score+5;
+  }
+  if(arrowGroup.isTouching(blueB)) {
+    blueB.destroyEach();
+    arrowGroup.destroyEach();
+    score = score+5;
+  }
+  if(arrowGroup.isTouching(greenB)) {
+    greenB.destroyEach();
+    arrowGroup.destroyEach();
+    score = score+5;
+  }
+  if(arrowGroup.isTouching(pinkB)) {
+    pinkB.destroyEach();
+    arrowGroup.destroyEach();
+    score = score+5;
+  }
     
   drawSprites();
   text("Score: "+ score, 300,50);
@@ -95,11 +116,6 @@ function redBalloon() {
   red.lifetime = 150;
   red.scale = 0.1;
   redB.add(red);
-  if(arrowGroup.isTouching(redB)) {
-    redB.destroyEach();
-    arrowGroup.destroyEach();
-    score = score+5;
-  }
 }
 
 function blueBalloon() {
@@ -109,11 +125,6 @@ function blueBalloon() {
   blue.lifetime = 150;
   blue.scale = 0.1;
   blueB.add(blue);
-  if(arrowGroup.isTouching(blueB)) {
-    blueB.destroyEach();
-    arrowGroup.destroyEach();
-    score = score+5;
-  }
 }
 
 function greenBalloon() {
@@ -123,11 +134,6 @@ function greenBalloon() {
   green.lifetime = 150;
   green.scale = 0.1;
   greenB.add(green);
-  if(arrowGroup.isTouching(greenB)) {
-    greenB.destroyEach();
-    arrowGroup.destroyEach();
-    score = score+5;
-  }
 }
 
 function pinkBalloon() {
@@ -137,9 +143,4 @@ function pinkBalloon() {
   pink.lifetime = 150;
   pink.scale = 1
   pinkB.add(pink);
-  if(arrowGroup.isTouching(pinkB)) {
-    pinkB.destroyEach();
-    arrowGroup.destroyEach();
-    score = score+5;
-  }
 }
