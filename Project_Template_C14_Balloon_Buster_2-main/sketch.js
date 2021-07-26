@@ -32,11 +32,11 @@ function setup() {
   
    score = 0    
 
-  arrowGroup = newGroup();
-  redB = newGroup();
-  greenB = newGroup();
-  pinkB = newGroup();
-  blueB = newGroup();
+  arrowGroup = new Group();
+  redB = new Group();
+  greenB = new Group();
+  pinkB = new Group();
+  blueB = new Group();
 }
 
 function draw() {
@@ -76,13 +76,6 @@ function draw() {
   text("Score: "+ score, 300,50);
 }
 
-redB.add(red);
-greenB.add(green);
-pinkB.add(pink);
-blueB.add(blue);
-arrowGroup.add(arrow);
-
-
 // Creating  arrows for bow
  function createArrow() {
   var arrow= createSprite(100, 100, 60, 10);
@@ -92,6 +85,7 @@ arrowGroup.add(arrow);
   arrow.velocityX = -4;
   arrow.lifetime = 100;
   arrow.scale = 0.3;
+  arrowGroup.add(arrow);
 }
 
 function redBalloon() {
@@ -100,6 +94,7 @@ function redBalloon() {
   red.velocityX = 3;
   red.lifetime = 150;
   red.scale = 0.1;
+  redB.add(red);
   if(arrowGroup.isTouching(redB)) {
     redB.destroyEach();
     arrowGroup.destroyEach();
@@ -113,6 +108,7 @@ function blueBalloon() {
   blue.velocityX = 3;
   blue.lifetime = 150;
   blue.scale = 0.1;
+  blueB.add(blue);
   if(arrowGroup.isTouching(blueB)) {
     blueB.destroyEach();
     arrowGroup.destroyEach();
@@ -126,6 +122,7 @@ function greenBalloon() {
   green.velocityX = 3;
   green.lifetime = 150;
   green.scale = 0.1;
+  greenB.add(green);
   if(arrowGroup.isTouching(greenB)) {
     greenB.destroyEach();
     arrowGroup.destroyEach();
@@ -139,6 +136,7 @@ function pinkBalloon() {
   pink.velocityX = 3;
   pink.lifetime = 150;
   pink.scale = 1
+  pinkB.add(pink);
   if(arrowGroup.isTouching(pinkB)) {
     pinkB.destroyEach();
     arrowGroup.destroyEach();
